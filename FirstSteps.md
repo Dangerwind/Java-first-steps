@@ -126,7 +126,8 @@ git config --global user.email "ваш@email.com"
 ssh-keygen -t ed25519 -C "ваш@email.com"
 cat ~/.ssh/id_ed25519.pub
 ```
-На все вопросы жмитье "enter".
+
+При установке SSH-ключа терминал может спрашивать путь и пароль. Нажимайте Enter, чтобы оставить значения по умолчанию.
 
 ![Генерация SSH](https://github.com/Dangerwind/Java-first-steps/blob/main/image/03-ssh-generate.png)
 

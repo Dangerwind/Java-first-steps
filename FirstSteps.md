@@ -19,6 +19,8 @@
 
 ## 2. Установка Java (JDK)
 
+Вначале вы можете ознакомиться со следующей [инструкцией](https://github.com/Hexlet/ru-instructions/blob/main/java.md) и следовать ей, либо воспользоваться описанием ниже.
+
 Мы будем использовать **OpenJDK 21** (LTS — долгосрочная поддержка).
 
 ### Ubuntu
@@ -40,38 +42,8 @@ java -version
 ![Проверка java --version](https://github.com/Dangerwind/Java-first-steps/blob/main/image/01-java-version.png)
 
 
-## 3. Установка редактора (IDEA)
-
-Мы будем использовать **IntelliJ IDEA Community Edition** — бесплатную версию от JetBrains. Это лучший редактор для Java.
-
-- [Скачать IDEA](https://www.jetbrains.com/idea/download/) Если загрузка недоступна, можно использовать средства обхода блокировок.
-- [Руководство: как работать в IntelliJ IDEA с WSL](https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html)
-
-Установите и запустите IDEA. Это основное место работы.
-
-
-
-## 4. Установка Git
-
-Git нужен для работы с репозиториями и GitHub.
-
-### Ubuntu
-```bash
-sudo apt install git
-git --version
-```
-
-### macOS
-```bash
-brew install git
-git --version
-```
-
-Проверяем, что вывод показывает версию git.
-
-
-
-## 5. Установка Gradle
+## 3. Установка Gradle
+Если вы ещё не установили Gradle по этой [инструкции](https://github.com/Hexlet/ru-instructions/blob/main/java.md) то следуйте описанию ниже.
 
 Gradle — основной инструмент сборки в проектах Hexlet.  
 Важно использовать современную версию **не ниже 8.7**, так как старые версии могут не поддерживать актуальные возможности Gradle и Kotlin DSL.
@@ -98,6 +70,7 @@ gradle -v
 
 ![Проверка gradle --version](https://github.com/Dangerwind/Java-first-steps/blob/main/image/02-gradle-version.png)
 
+
 ### Альтернативный способ: официальный дистрибутив Gradle
 
 1. Скачайте Gradle 8.7+ с официального сайта: [https://gradle.org/releases/](https://gradle.org/releases/)  
@@ -111,29 +84,30 @@ export PATH=/opt/gradle/gradle-8.7/bin:$PATH
 gradle -v
 ```
 
-## 6. Настройка окружения
+## 4. Установка Git
 
-### Настройка Git
-```bash
-git config --global user.name "Ваше имя"
-git config --global user.email "ваш@email.com"
-```
 
-### Генерация SSH-ключа
-```bash
-ssh-keygen -t ed25519 -C "ваш@email.com"
-cat ~/.ssh/id_ed25519.pub
-```
-
+Git — это инструмент для работы с репозиториями. Чтобы пользоваться им с GitHub, установите Git, настройте его, сгенерируйте SSH-ключ и добавьте его в GitHub. Подробно об этом написано [здесь](https://github.com/Hexlet/ru-instructions/blob/main/git.md).
+   
 Во время выполнения команд в терминале могут появляться запросы (например, на ввод пути для сохранения ключа или парольную фразу). Просто нажимайте Enter, чтобы принять значения по умолчанию.
 
 ![Генерация SSH](https://github.com/Dangerwind/Java-first-steps/blob/main/image/03-ssh-generate.png)
 
-Добавьте полученный ключ (`ssh-ed25519...`) в GitHub: откройте настройки вашего аккаунта GitHub (клик по аватарке в правом верхнем углу → Settings), затем перейдите в раздел “SSH and GPG keys” и нажмите “New SSH key”. Вставьте скопированный ключ в поле “Key” и сохраните.
+Для добавления ключа (`ssh-ed25519...`) в GitHub: откройте настройки вашего аккаунта GitHub (клик по аватарке в правом верхнем углу → Settings), затем перейдите в раздел “SSH and GPG keys” и нажмите “New SSH key”. Вставьте скопированный ключ в поле “Key” и сохраните.
 [Полная инструкция](https://docs.github.com/ru/authentication/connecting-to-github-with-ssh).
 
 
-## 7. Создание проекта
+## 5. Установка редактора (IDEA)
+
+Мы будем использовать **IntelliJ IDEA Community Edition** — бесплатную версию от JetBrains. Это лучший редактор для Java.
+
+- [Скачать IDEA](https://www.jetbrains.com/idea/download/) Если загрузка недоступна, можно использовать средства обхода блокировок.
+- [Руководство: как работать в IntelliJ IDEA с WSL](https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html)
+
+Установите и запустите IDEA. Это основное место работы.
+
+
+## 6. Создание проекта
 
 Теперь мы готовы создать первый проект на Java с помощью Gradle.
 
@@ -150,8 +124,12 @@ cat ~/.ssh/id_ed25519.pub
 
 4. В IntelliJ IDEA создайте новый **Gradle-проект**:
    - Название проекта: `app`
-   - GroupId: `hexlet.code`
    - Location: `путь к директории, куда вы склонировали проект`
+   - Build system: `Gradle`
+   - JDK: `21`, (поставшик corretto, temurin, homebrew... не играет роли)
+   - Gradle DSL: `Kotlin`
+   - GroupId: `hexlet.code`
+
 
 Структура проекта будет такой:
 ```
@@ -189,7 +167,7 @@ public class App {
 
 ___
 
-## 8. Работа с зависимостями и плагинами
+## 7. Работа с зависимостями и плагинами
 
 Для проверки обновлений в Gradle используем плагин `gradle-versions-plugin`.  
 Документация: [Gradle Versions Plugin](https://github.com/ben-manes/gradle-versions-plugin).
@@ -201,7 +179,7 @@ ___
 
 
 
-## 9. Push проекта на GitHub
+## 8. Push проекта на GitHub
 
 После изменений:
 ```bash
@@ -214,7 +192,7 @@ git push origin main
 
 
 
-## 10. Типичные ошибки новичков и как их исправить
+## 9. Типичные ошибки новичков и как их исправить
 
 1. **Команда `java` не найдена**  
    — Проверьте, что JDK установлена и добавлена в PATH.  
@@ -234,7 +212,7 @@ git push origin main
    — Сравните с [примером проекта](https://github.com/hexlet-boilerplates/java-package).
 
 
-## 11. Где искать помощь
+## 10. Где искать помощь
 
 - [Блог Hexlet](https://ru.hexlet.io/blog)  
 - [Hexlet: инструкции по Java](https://github.com/Hexlet/ru-instructions/blob/main/java.md)

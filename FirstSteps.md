@@ -130,6 +130,7 @@ Git — это инструмент для работы с репозитори�
    - Gradle DSL: `Kotlin`
    - GroupId: `hexlet.code`
 
+![IDEA new project](https://github.com/Dangerwind/Java-first-steps/blob/main/image/07-idea-start.png)
 
 Структура проекта будет такой:
 ```

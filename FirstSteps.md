@@ -39,6 +39,7 @@ java -version
 Обратите внимание: при выполнении команд с sudo система может запросить ваш пароль. Введите его, чтобы продолжить установку.
 
 Проверяем, что вывод показывает `openjdk version "21"`.
+
 ![Проверка java --version](https://github.com/Dangerwind/Java-first-steps/blob/main/image/01-java-version.png)
 
 
@@ -162,7 +163,7 @@ public class App {
 ![Создание класса](https://github.com/Dangerwind/Java-first-steps/blob/main/image/05-new-class.png)
 
 
-5. Запустите программу и убедитесь, что выводится `Hello World!`.
+5. Запустите программу, нажав на зелёный треугольник с надписью Run App, и убедитесь, что в консоли выводится Hello World!
 
 ![Запуск и вывод в терминал](https://github.com/Dangerwind/Java-first-steps/blob/main/image/06-run-app.png)
 
@@ -182,15 +183,22 @@ ___
 
 ## 8. Push проекта на GitHub
 
-После изменений:
+После внесённых изменений нужно отправить их (*сделать push*) в удалённый репозиторий на GitHub.  
+Сделать это можно через терминал:
+
 ```bash
 git add .
 git commit -m "Init project"
 git push origin main
 ```
 
-Теперь ваш проект доступен на GitHub.
+А можно выполнить push напрямую из IDEA:
 
+![Git-push](https://github.com/Dangerwind/Java-first-steps/blob/main/image/08-git-push.png)
+
+Нажмите Commit and Push.
+
+Теперь ваш проект доступен на GitHub.
 
 
 ## 9. Типичные ошибки новичков и как их исправить
@@ -218,6 +226,10 @@ git push origin main
 - [Блог Hexlet](https://ru.hexlet.io/blog)  
 - [Hexlet: инструкции по Java](https://github.com/Hexlet/ru-instructions/blob/main/java.md)
 - [Как упростить разработку с помощью виртуализации](https://ru.hexlet.io/blog/posts/kak-uprostit-razrabotku-s-pomoschyu-virtualizatsii)
+- [Как работать с Linux используя Windows](https://ru.hexlet.io/blog/posts/ubuntu-linux-in-windows)
+- [Как установить Linux используя Virtualbox](https://ru.hexlet.io/blog/posts/virtualbox)
+- [Работа с Git](https://github.com/Hexlet/ru-instructions/blob/main/git.md)
+
 - [Документация OpenJDK](https://openjdk.org/)  
 - [Документация Gradle](https://gradle.org/docs/)  
 

@@ -35,10 +35,15 @@ java -version
 
 ### macOS (через Homebrew)
 ```bash
+brew update
 brew install openjdk@21
+
+# добавляем переменные окружения в ~/.zprofile
+echo 'export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"' >> ~/.zprofile
+echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zprofile
 ```
 
-Затем проверить установку и версию:
+Затем проверяем установку и версию:
 ```bash
 java -version
 ```

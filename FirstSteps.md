@@ -33,6 +33,8 @@ java -version
 ### macOS (через Homebrew)
 ```bash
 brew install openjdk@21
+export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 java -version
 ```
 

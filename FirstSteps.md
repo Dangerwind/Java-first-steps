@@ -37,11 +37,7 @@ java -version
 ```bash
 brew install openjdk@21
 ```
-После установки OpenJDK 21 надо настроить окружение, чтобы система и терминал знали, где находится JDK. Обычно для этого нужно добавить в файл конфигурации шелла следующие строки:
-```bash
-export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
-```
+
 Затем проверить установку и версию:
 ```bash
 java -version
